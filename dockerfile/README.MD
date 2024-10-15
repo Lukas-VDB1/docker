@@ -13,6 +13,7 @@ Eens je klaar bent kan je deze container bouwen met
 docker build . -t devops/flask-app:1
 ```
 
+## Run docker container
 Run de container
 ```
 docker run -p 5000:5000 devops/flask-app:1
