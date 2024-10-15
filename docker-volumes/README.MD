@@ -45,3 +45,10 @@ docker exec -it data_storage cat /data/processed/saved_data.txt
 ```
 
 Vult het resultaat in bij de opdracht
+
+# Clean up
+
+```
+docker stop data_storage data_processor data_generator
+docker rm data_storage data_processor data_generator
+```
