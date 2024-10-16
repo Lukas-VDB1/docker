@@ -1,0 +1,23 @@
+# Gebruik een basisimage met Python 3.9+
+FROM python:3.9
+
+# Stel de werkdirectory in de container in
+WORKDIR /app
+
+# Kopieer de requirements.txt naar de container
+COPY requirements.txt .
+
+# Installeer de benodigde packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Kopieer de app.py naar de container
+COPY app.py .
+
+# Stel de FLASK_APP environment variable in
+ENV FLASK_APP=app.py
+
+# Exposeer poort 5000
+EXPOSE 5000
+
+# Start de Flask app
+CMD ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]
