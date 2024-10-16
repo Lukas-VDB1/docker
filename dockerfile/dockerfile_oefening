@@ -16,8 +16,14 @@ COPY app.py .
 # Stel de FLASK_APP environment variable in
 ENV FLASK_APP=app.py
 
-# Exposeer poort 5000
+# Expose poort 5000
 EXPOSE 5000
 
 # Start de Flask app
 CMD ["flask", "run", "-h", "0.0.0.0", "-p", "5000"]
+
+
+# Nu: in powershell docker container builden via "docker build -f dockerfile_oefening . -t devops/flask-app:1"
+# En starten via "docker run -p 5000:5000 devops/flask-app:1"
+# Dan navigeren naar "http://localhost:5000/api/message"
+
